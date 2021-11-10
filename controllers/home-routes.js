@@ -4,3 +4,5 @@ const sequelize = require('../config/connection');
 
 
 console.log("Hello world!");
+
+module.exports = router;
