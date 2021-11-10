@@ -10,12 +10,14 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
     "mysql2": "^2.3.3-rc.0",
     "sequelize": "^6.9.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node server.js"
   },
   "repository": {
     "type": "git",
