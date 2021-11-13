@@ -22,7 +22,6 @@ async function getBreweriesByCity (event) {
     //Searches by entered city name
     event.preventDefault();
     let cityName = document.querySelector("#text-city").value.trim();
-    console.log(cityName);
     const apiKey = "https://api.openbrewerydb.org/breweries?by_city=" + cityName;
 
     fetch(apiKey)
