@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const getBreweriesByZip = require('../public/js/api-returns');
+const {getBreweriesByZip, getBreweriesByCity} = require('../public/js/api-returns');
 const citySearchValue = $('#text-city').val();
 
 // if needed 
@@ -15,7 +15,7 @@ router.get('/login', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  const barNames =  getBreweriesByZip(citySearchValue);
+  const barNames =  getBreweriesByCity(citySearchValue);
 
   const data = {
     breweries: barNames
