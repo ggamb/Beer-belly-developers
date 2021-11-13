@@ -13,11 +13,11 @@ router.get('/login', (req, res) => {
 
 
 router.get('/', (req, res) => {
-  const data = {
+  /*const data = {
     breweries: barNames
-  }
+  }*/
 
-  res.render('index', data);
+  res.render('index');
 });
 
 module.exports = router;
