@@ -1,0 +1,37 @@
+body {
+    background-color: #9d6b53;
+}
+.nav-bar {
+    background-color: #ff890a;
+}
+.hero-img {
+    background-image: url(./imgs/cheers.jpeg);
+    background-size:auto;
+    height: 600px;
+    background-attachment:fixed;
+    background-position:center;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.hero-text{
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    padding-top: 80;
+}
+
+.search-box {
+    position: static;
+}
+.btn {
+    color: black;
+}
+
+.title{
+    color: yellow;
+    font-size: 36px;
+}
