@@ -1,9 +1,10 @@
+const router = require('express').Router();
+const sequelize = require('../connection');
 
 // post new User route
 router.post('/', (req, res) => {
   User.create({
     username: req.body.username,
-    // email: req.body.email,
     password: req.body.password
   })
     .then(dbUser => {
