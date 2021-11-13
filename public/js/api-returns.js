@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 //Zip code entered by user passed to function
 const getBreweriesByZip = (zipCode) => {
@@ -21,9 +21,11 @@ const getBreweriesByCity = (cityName) => {
     fetch(apiKey)
     .then(response => {return response.json()})
     .then(apiResponse => {
+        console.log(apiResponse);
         return apiResponse;
     })
     .catch(err => {console.log(err)})
 }
 
-modules.exports = {getBreweriesByZip, getBreweriesByCity};
+document.querySelector('#text-city').addEventListener('submit', getBreweriesByCity);
+document.querySelector('#text-zip').addEventListener('submit', getBreweriesByZip);
