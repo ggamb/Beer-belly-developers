@@ -5,12 +5,19 @@ async function getBreweriesByCity (event) {
 
     let cityName = document.querySelector("#text-city").value.trim();
 
-    let currentURL = window.location.href.split('/');
+    let hostName = window.location.hostname;
+    
+    console.log(hostName);
 
-    let newURL = currentURL[0]  + "api/city/" + cityName;
+    if(hostName == 'localhost') {
+        hostName += ':3001/';
+    } 
+
+    console.log(hostName);
+
+    let newURL = 'http://' + hostName  + "api/city/" + cityName;
 
     window.location.href = newURL;
-
 
 }
 
@@ -20,9 +27,15 @@ async function getBreweriesByZip(event) {
 
     let zipCode = document.querySelector("#text-zip").value.trim();
 
-    let currentURL = window.location.href.split('/');
+    let hostName = window.location.hostname;
 
-    let newURL = currentURL[0] + "api/zip/" + zipCode;
+    if(hostName == 'localhost') {
+        hostName += ':3001/';
+    } 
+
+    console.log(hostName);
+
+    let newURL = 'http://' + hostName  + "api/zip/" + zipCode;
 
     window.location.href = newURL;
 
