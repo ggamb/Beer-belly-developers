@@ -3,11 +3,11 @@ async function getBreweriesByCity (event) {
     //Searches by entered city name
     event.preventDefault();
 
-    let zipCode = document.querySelector("#text-zip").value.trim();
+    let cityName = document.querySelector("#text-city").value.trim();
 
-    let currentURL = window.location.href;
+    let currentURL = window.location.href.split('/');
 
-    let newURL = currentURL  + "/cities/" + zipCode;
+    let newURL = currentURL[0]  + "api/city/" + cityName;
 
     window.location.href = newURL;
 
@@ -20,9 +20,9 @@ async function getBreweriesByZip(event) {
 
     let zipCode = document.querySelector("#text-zip").value.trim();
 
-    let currentURL = window.location.href;
+    let currentURL = window.location.href.split('/');
 
-    let newURL = currentURL + "/zip/" + zipCode;
+    let newURL = currentURL[0] + "api/zip/" + zipCode;
 
     window.location.href = newURL;
 

@@ -1,8 +1,10 @@
 /*Placeholder for server.js*/
 const router = require('express').Router();
 const homeRoutes = require('./HomePage-routes');
+const apiRoutes = require('./api');
 
 router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 
 router.use((req, res) => {
   res.status(404).end();
