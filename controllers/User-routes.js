@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const sequelize = require('../connection');
-
+const { User, Comment} = require('../../models');
 
 // get all users 
 
@@ -15,7 +15,7 @@ router.get('/Users', (req, res) => {
     });
 });
 
-// post new User route
+// post - Crerate new User route
 router.post('/User', (req, res) => {
   User.create({
     username: req.body.username,
@@ -38,7 +38,7 @@ router.post('/User', (req, res) => {
     });
 });
 
-// login route
+// post- login route
 router.post('/login', (req, res) => {
   
   User.findOne({
@@ -69,7 +69,7 @@ router.post('/login', (req, res) => {
   });
 });
 
-// logout route
+// post- logout route
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -84,7 +84,7 @@ router.post('/logout', (req, res) => {
 });
 
 
-// update user password
+// put -update user password
 router.put('/:id', (req, res) => {
  
   User.update(req.body, {
