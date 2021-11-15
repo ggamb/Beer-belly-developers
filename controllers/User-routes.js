@@ -1,5 +1,10 @@
 const router = require('express').Router();
-const sequelize = require('../connection');
+// const sequelize = require('../connection');
+
+
+// get all users 
+
+
 
 // post new User route
 router.post('/', (req, res) => {
