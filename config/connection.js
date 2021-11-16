@@ -1,4 +1,3 @@
-/*Placeholder for server.js*/ 
 const Sequelize = require('sequelize');
 
 require('dotenv').config();
