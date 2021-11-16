@@ -15,7 +15,6 @@ router.get('/:zip', (req, res) => {
       let barNames = {
         breweries: apiResponse
       };
-      console.log("bar names inside", barNames)
       res.render('index', barNames);
     })
     .catch(err => {console.log(err)});
