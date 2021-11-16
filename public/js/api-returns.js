@@ -1,29 +1,45 @@
-const fetch = require('node-fetch');
+//City name entered by user passed to function
+async function getBreweriesByCity (event) {
+    //Searches by entered city name
+    event.preventDefault();
+
+    let cityName = document.querySelector("#text-city").value.trim();
+
+    let hostName = window.location.hostname;
+    
+    console.log(hostName);
+
+    if(hostName == 'localhost') {
+        hostName += ':3001/';
+    } 
+
+    console.log(hostName);
+
+    let newURL = 'http://' + hostName  + "api/city/" + cityName;
+
+    window.location.href = newURL;
+
+}
 
 //Zip code entered by user passed to function
-const getBreweriesByZip = (zipCode) => {
-    //Searches by entered zip code
-    const apiKey = "https://api.openbrewerydb.org/breweries?by_postal=" + zipCode;
+async function getBreweriesByZip(event) {
+    event.preventDefault();
 
-    fetch(apiKey)
-    .then(response => {return response.json()})
-    .then(apiResponse => {
-        return apiResponse;
-    })
-    .catch(err => {console.log(err)})
+    let zipCode = document.querySelector("#text-zip").value.trim();
+
+    let hostName = window.location.hostname;
+
+    if(hostName == 'localhost') {
+        hostName += ':3001/';
+    } 
+
+    console.log(hostName);
+
+    let newURL = 'http://' + hostName  + "api/zip/" + zipCode;
+
+    window.location.href = newURL;
+
 }
 
-//City name entered by user passed to function
-const getBreweriesByCity = (cityName) => {
-    //Searches by entered city name
-    const apiKey = "https://api.openbrewerydb.org/breweries?by_city=" + cityName;
-
-    fetch(apiKey)
-    .then(response => {return response.json()})
-    .then(apiResponse => {
-        return apiResponse;
-    })
-    .catch(err => {console.log(err)})
-}
-
-modules.exports = {getBreweriesByZip, getBreweriesByCity};
+document.getElementById('submit-city').addEventListener('click', getBreweriesByCity);
+document.getElementById('submit-zip').addEventListener('click', getBreweriesByZip);
