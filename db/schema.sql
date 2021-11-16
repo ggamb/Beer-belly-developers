@@ -2,26 +2,3 @@ DROP DATABASE IF EXISTS beer_belly_db;
 
 CREATE DATABASE beer_belly_db;
 
-USE beer_belly_db;
-
-CREATE TABLE BarList (
-  id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(30) NOT NULL,
-  brewery_type VARCHAR (20) NOT NULL,
-  street VARCHAR(30) NOT NULL,
-  phone VARCHAR(15),
-  website_url VARCHAR(30)
-);
-
-CREATE TABLE User (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(30) NOT NULL,
-    password VARCHAR(30) NOT NULL
-);
-
-CREATE TABLE Comments(
-  id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  comment_text VARCHAR(100) NOT NULL,
-  user_id INTEGER,
-  CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE 
-);

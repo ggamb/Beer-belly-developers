@@ -6,7 +6,7 @@ const sequelize = require('../config/connection');
 //  User model
 class User extends Model {
   // check password of user
-  varifyPassword(loginPass) {
+  checkPassword(loginPass) {
     return bcrypt.compareSync(loginPass, this.password);
   }
 }
@@ -49,7 +49,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'User'
   }
 );
 

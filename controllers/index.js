@@ -5,11 +5,12 @@ const userRoutes = require('./User-routes.js');
 const apiRoutes = require('./api');
 
 router.use('/', homeRoutes);
-router.use('/User', userRoutes)
+router.use('/login', userRoutes);
+router.use('/Users', userRoutes);
 router.use('/api', apiRoutes);
 
-router.use((req, res) => {
-  res.status(404).end();
-});
+// router.use((req, res) => {
+//   res.status(404).end();
+// });
 
 module.exports = router;
