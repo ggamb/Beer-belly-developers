@@ -9,59 +9,47 @@
     <link rel="stylesheet" href="./assets/style-sheet.css">
 </head>
 
+
 <body>
 
-    <!-- Navigation -->
-    <div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
-        <!-- <button class="menu-icon btn" type="button" data-toggle></button> -->
-        <div class="title-bar-title">Menu</div>
-    </div>
-
-    <div class="top-bar nav-bar" id="realEstateMenu">
-        <div class="top-bar-left">
-            <ul class="menu" data-responsive-menu="accordion">
-                <li class="menu-text title nav-bar">Beer Belly Ratings</li>
+    <div>
+        <div class='top-bar-left nav-bar'>
+            <ul>
+                <li><a href="#">Beer Belly Ratings</a></li>
+                <li><a class="button warning btn">Login</a></li>
             </ul>
         </div>
-        <div class="top-bar-right nav-bar">
-            <ul class="menu">
-                <!-- <li><a class="nav-bar btn" href="#">My Account</a></li> -->
-                <li><a class="button btn nav-bar">Login</a></li>
-            </ul>
         </div>
-    </div>
-    <!-- /Navigation -->
+<br>
+<br>
 
-    <br>
+
     <section>
-        <div class="hero-img">
+        <div>
             <div class="row">
-                <div class="hero-text">
+                <div class="columns small-11 small-centered hero-text">
                     <h1>Tap into your local Breweries!</h1>
-                    <p class="subheader hero-text"> Find the best breweries near you, connect with other beer lovers,
+                    <p class="subheader"> Find the best breweries near you, connect with other beer lovers,
                         and leave your own beer-belly certified review!</p>
-                    <button class="button btn hero-text">Create Account</button>
-                    <button class="button btn hero-text">Show me a brewery!</button>
+                    <a class="button warning">Create Account</a>
+                    <a class="button warning">Show me a brewery!</a>
                 </div>
             </div>
 
-
-
-
-            <div class="medium-5 large-3 columns hero-text">
-                <div class="callout secondary">
+            <div class="row box">
+                <div>
                     <form>
-                        <div class="row">
+                        <div class="columns small-6 large-centered">
                             <div class="small-12 columns">
                                 <label>Find Your Dream Beer
-                                    <input type="text" placeholder="Search by city">
+                                    <input class="input" type="text" placeholder="Search by city">
                                 </label>
                             </div>
                             <div class="small-12 columns">
                                 <label>Zip code
-                                    <input type="number" placeholder="Search by zipcode">
+                                    <input class="input" type="number" placeholder="Search by zipcode">
                                 </label>
-                                <button type="submit" class="button btn">Search Now!</button>
+                                <button type="submit" class="button warning">Search Now!</button>
                             </div>
                         </div>
                     </form>
@@ -132,11 +120,16 @@
     </div>
 
     <div class="row column">
-        <a class="button hollow expanded btn">Load More</a>
+        <a class="button expanded warning load-more">Load More</a>
     </div>
 
     <footer>
-        <img src='./assets/imgs/beer-table.jpeg' alt='beer on table' />
+        <div>
+            <div'>
+                <ul>
+                    <li class="footer-txt">Beer Belly Ratings &copy; </a></li>
+                </ul>
+            </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

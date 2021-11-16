@@ -1,37 +1,84 @@
-body {
-    background-color: #9d6b53;
+a {
+    color: inherit;
+    text-decoration: none;
 }
+
 .nav-bar {
-    background-color: #ff890a;
+    background-color: rgba(0,0,0,.2);
+    width:100%;
+    font-size: 36px;
+    font-weight: bold;
+    color:#001d3d;
+    text-shadow: 0 0 20px rgb(243, 213, 42);
+    margin-bottom: 50px;
 }
-.hero-img {
-    background-image: url(./imgs/cheers.jpeg);
-    background-size:auto;
-    height: 600px;
-    background-attachment:fixed;
-    background-position:center;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: flex-start;
+
+.nav-bar ul {
+    text-align: center;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin:0px 300px;
+    padding-top: 10px;
+}
+
+.hero-text p {
+    color: #001d3d;
+    padding: 10px;
+    font-size: 24px;
 }
 
 .hero-text{
-    display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
-    padding-top: 80;
+    margin: 60px;
+    padding: 50px;
+    background-color:rgba(252, 216, 11, 0.6);
+    border-radius: 5px;
+    text-align: center;   
 }
 
-.search-box {
-    position: static;
-}
-.btn {
-    color: black;
+.hero-text h1 {
+    padding: 30px;
 }
 
-.title{
-    color: yellow;
+.box {
+    text-align:left; 
+}
+
+.box label {
+    font-size: 28px;
+    font-weight: bold;
+    color:#001d3d;
+    text-shadow: 0 0 20px rgb(243, 213, 42);
+    padding-bottom: 20px;
+}
+
+.input {
+    background-color: rgba(252, 216, 11, 0.6);
+}
+
+.lead {
+    font-size: 28px;
+    font-weight: bold;
+    color:#001d3d;
+    text-shadow: 0 0 20px rgb(243, 213, 42);
+}
+
+.load-more{
+    font-size: 18px;
+}
+
+.footer-txt {
+    background-color: rgba(0,0,0,.2);
+    width:100%;
+    padding-left: 20px;
+    color: #ff890a;
     font-size: 36px;
+}
+
+
+body {
+    background-image: url(./imgs/beer-table.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;  
 }
