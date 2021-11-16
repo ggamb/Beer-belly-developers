@@ -5,6 +5,10 @@ async function getBreweriesByCity (event) {
 
     let cityName = document.querySelector("#text-city").value.trim();
 
+    if(cityName === null) {
+        return;
+    }
+
     let hostName = window.location.hostname;
     
     console.log(hostName);
@@ -19,6 +23,22 @@ async function getBreweriesByCity (event) {
 
     window.location.href = newURL;
 
+
+    /*if (cityName) {
+        const response = await fetch('/api/city', {
+            method: 'get',
+            body: JSON.stringify({
+            cityName
+            }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert(response.statusText);
+        }
+    }*/
+
 }
 
 //Zip code entered by user passed to function
@@ -26,6 +46,10 @@ async function getBreweriesByZip(event) {
     event.preventDefault();
 
     let zipCode = document.querySelector("#text-zip").value.trim();
+
+    if(zipCode === null) {
+        return;
+    }
 
     let hostName = window.location.hostname;
 
