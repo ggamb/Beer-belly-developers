@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beer Belly Results</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" href="./assets/commentRating.css"/>
     <link rel="stylesheet" href="./assets/style-sheet.css">
-    <link rel="style-sheet" href="assets/results-style.css">
+    <link rel="style-sheet" href=".assets/results-style.css">
   </head>
   <body>
-
 
     <!-- Start Top Bar -->
     <div>
       <div class="row">
-        <div class="top-bar-left search-bar">
+        <div class="top-bar-left nav-bar">
           <ul>
             <li>Craving Results:</li>
             <li><input type="search" placeholder="Search"></li>
             <li><button type="button" class="button warning">Search</button></li>
-            <li><button type="button" class="button warning">Home</button></li>
           </ul>
         </div>
       </div>
@@ -65,6 +62,10 @@
         <p>Brewery info here</p>
 
         <div class="small secondary expanded button-group">
+            <a class="button">Facebook</a>
+            <a class="button">Twitter</a>
+            <a class="button">Yo</a>
+          </div>
         </div>
     </div>
 
@@ -72,22 +73,20 @@
       <hr>
       <div class="tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="panel1">
-          <h4>Reviews:</h4>
+          <h4>Reviews</h4>
           
           <label>
-            <div class="rate">
-              <input type="radio" id="star5" name="rate" value="5" />
-              <label for="star5" title="text">5 stars</label>
-              <input type="radio" id="star4" name="rate" value="4" />
-              <label for="star4" title="text">4 stars</label>
-              <input type="radio" id="star3" name="rate" value="3" />
-              <label for="star3" title="text">3 stars</label>
-              <input type="radio" id="star2" name="rate" value="2" />
-              <label for="star2" title="text">2 stars</label>
-              <input type="radio" id="star1" name="rate" value="1" />
-              <label for="star1" title="text">1 star</label>
-            </div>
-            <textarea placeholder="How was the experience ?"></textarea>
+            My Review
+            <label>Star Rating
+                <select>
+                  <option value="Star">One</option>
+                  <option value="Star">Two</option>
+                  <option value="Star">Three</option>
+                  <option value="Star">Four</option>
+                  <option value="Star">Five</option>
+                </select>
+                </label>
+            <textarea placeholder="Comment"></textarea>
           </label>
           <button class="button">Submit Review</button>
         </div>
