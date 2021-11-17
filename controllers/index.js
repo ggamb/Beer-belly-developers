@@ -1,4 +1,3 @@
-/*Placeholder for server.js*/
 const router = require("express").Router();
 const homeRoutes = require("./HomePage-routes");
 const apiRoutes = require("./api");

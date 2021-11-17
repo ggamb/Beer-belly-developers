@@ -5,7 +5,7 @@
     {{#each breweries}}
     <div class="column">
         <div class="callout">
-        <p class="lead">Bar: {{name}}</p>
+        <a href="/api/bar/{{id}}" class="lead" id={{id}}>{{name}}</a>
         <p class="subheader">Type: {{brewery_type}}</p>
         <p>Address: {{street}}</p>
         <p>Number: {{phone}}</p>
