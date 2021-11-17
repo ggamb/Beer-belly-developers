@@ -1,30 +1,51 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beer Bellys</title>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <link rel="stylesheet" href="./assets/style-sheet.css">
-  </head>
-  
-  <body>
-    {{{ body }}}
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-    <script src="/public/js/Login.js"></script>
-    <script src="/public/js/Logout.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beer Bellys</title>
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" href="./assets/style-sheet.css">
+</head>
+
+<body>
+  <div>
+    <div class='top-bar-left nav-bar'>
+      <ul>
+        <li><a href="/">Beer Belly Ratings</a></li>
+        <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
+        {{#if loggedIn}}
+        <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+  {{{ body }}}
+
+
+  {{#if loggedIn}}
+  <script src="/js/Logout.js"></script>
+  {{else}}
+  <script src="/js/Login.js"></script>
+  {{/if}}
+
 
   <footer>
+    <div>
       <div>
-          <div>
-              <ul>
-                  <li class="footer-txt">Beer Belly Ratings &copy; </a></li>
-              </ul>
-          </div>
+        <ul>
+          <li class="footer-txt">Beer Belly Ratings &copy; </a></li>
+        </ul>
+      </div>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+
+</body>
+
 </html>
