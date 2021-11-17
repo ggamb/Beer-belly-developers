@@ -1,17 +1,33 @@
 const router = require('express').Router();
-const sequelize = require('../connection');
+// const sequelize = require('../connection');
+const { User} = require('../models');
 
-// post new User route
+// get all users 
+
+router.get('/', (req, res) => {
+  console.log('** Enter get all users');
+  User.findAll({
+    attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// post - Crerate new User route
 router.post('/', (req, res) => {
+ console.log('** enter POST users');
   User.create({
     username: req.body.username,
     password: req.body.password
   })
-    .then(dbUser => {
+    .then(dbUserData => {
       req.session.save(() => {
         // gives server access to user name and id
-        req.session.user_id = dbUser.id;
-        req.session.username = dbUser.username;
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
         req.session.loggedIn = true;
   
         res.json(dbUserData);
@@ -24,38 +40,32 @@ router.post('/', (req, res) => {
     });
 });
 
-// login route
+// post- login route
 router.post('/login', (req, res) => {
-  
+  console.log('**Enter login');
   User.findOne({
     where: {
-      email: req.body.email
+      username: req.body.username
     }
-  }).then(dbUser => {
-    if (!dbUser) {
-      // invalied request
-      res.status(400).json({ message: 'No user with that email , invalid request' });
-      return;
-    }
-
-    const evaluatePassword = dbUser.checkPassword(req.body.password);
+  }).then(dbUserData => {
+    const evaluatePassword = dbUserData.checkPassword(req.body.password);
 
     if (!evaluatePassword) {
-      res.status(400).json({ message: 'Incorrect password, invalid request' });
+      res.status(400).json({ message: 'Incorrect password' });
       return;
     }
     
     req.session.save(() => {
-      req.session.user_id = dbUser.id;
+      req.session.user_id = dbUserData.id;
       req.session.username = dbUser.username;
       req.session.loggedIn = true;
   
-      res.json({ user: dbUser, message: 'You are  logged in' });
+      res.json({ user: dbUserData, message: 'You are  logged in' });
     });
   });
 });
 
-// logout route
+// post- logout route
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -70,7 +80,7 @@ router.post('/logout', (req, res) => {
 });
 
 
-// update user password
+// put -update user password
 router.put('/:id', (req, res) => {
  
   User.update(req.body, {

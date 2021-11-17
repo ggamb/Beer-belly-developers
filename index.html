@@ -4,37 +4,66 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beer Bellys</title>
-    <link
-      rel="stylesheet"
-      href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"
-    />
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   </head>
   <body>
-    <!-- Navigation -->
-    <div
-      class="title-bar"
-      data-responsive-toggle="realEstateMenu"
-      data-hide-for="small"
-    >
-      <button class="menu-icon" type="button" data-toggle></button>
-      <div class="title-bar-title">Menu</div>
-    </div>
 
-    <div class="top-bar" id="realEstateMenu">
-      <div class="top-bar-left">
-        <ul class="menu" data-responsive-menu="accordion">
-          <li class="menu-text">Beer Belly Ratings</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#">My Account</a></li>
-          <li><a class="button" id="login-btn">Login</a></li>
-          <li><a class="button" id="logout-btn">Logout</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- /Navigation -->
+<!-- Navigation -->
+<div class="title-bar" data-responsive-toggle="realEstateMenu" data-hide-for="small">
+  <button class="menu-icon" type="button" data-toggle></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+
+<div class="top-bar" id="realEstateMenu">
+  <div class="top-bar-left">
+    <ul class="menu" data-responsive-menu="accordion">
+      <li class="menu-text">Beer Belly Ratings</li>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><a href="#">My Account</a></li>
+      <li><a class="button" id="login-btn">Login</a></li>
+      <li><a class="button" id="logout-btn">Logout</a></li>
+    </ul>
+  </div>
+</div>
+<!-- /Navigation -->
+
+
+<div class="row">
+
+  <div class="medium-7 large-6 columns">
+    <h1>Tap into your local Breweries!</h1>
+    <p class="subheader"> Find the best breweries near you, connect with other beer lovers, and leave your own beer-belly certified review!</p>
+    <button class="button">Create Account</button>
+    <button class="button">Show me a brewery!</button>
+  </div>
+
+  <div class="show-for-large large-3 columns">
+    <img src="./assets/imgs/cheers.jpeg" alt="picture of people cheering beer">
+  </div>
+
+  <div class="medium-5 large-3 columns">
+    <div class="callout secondary">
+      <form>
+        <div class="row">
+          <div class="small-12 columns">
+            <label>Find Your Dream Beer
+              <input type="text" placeholder="Search by city" id="text-city">
+            </label>
+            <button type="submit" class="button" id="submit-city">Search Now!</button>
+          </div>
+          <div class="small-12 columns">
+            <label>Zip code
+              <input type="number" placeholder="Search by zipcode" id="text-zip">
+            </label>
+            <button type="submit" class="button" id="submit-zip">Search Now!</button>
+          </div>
+        </div>
+        </div>
+<br>
+<br>
 
     <br />
 
