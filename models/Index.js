@@ -5,7 +5,7 @@ const Comment = require('./Comment');
 
 User.hasMany(Comment, {
   foreignKey: 'user_id',
-  onDelete: 'SET NULL'
+  // onDelete: 'SET CASCADE'
 });
 
 Comment.belongsTo(User, {
