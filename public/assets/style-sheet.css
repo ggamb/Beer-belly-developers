@@ -83,6 +83,20 @@ a {
     font-size: 36px;
 }
 
+.login {
+    padding: 50px;
+    margin:250px;
+    background-color:rgba(252, 216, 11, 0.6);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.login-form {
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+}
+
 
 body {
     background-image: url(./imgs/beer-table.jpeg);
