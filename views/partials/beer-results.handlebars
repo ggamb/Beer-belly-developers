@@ -1,21 +1,20 @@
 <div class="row column">
   <p class="lead">Your Belly's Results:</p>
 </div>
-<div class="row small-up-1 medium-up-2 large-up-3" id = "beer-container"></div>
-    {{#each breweries}}
-    <div class="column">
-        <div class="callout">
-          <a href="/api/bar/{{id}}" class="lead" id={{id}}>{{name}}</a>
-          <p class="subheader">Type: {{brewery_type}}</p>
-          <p>Address: {{street}}</p>
-          <p>Number: {{phone}}</p>
-          <a href="{{website_url}}" target="_blank">Website</a>
-          <p><img src="https://placehold.it/400x370&text=Pegasi B" alt="image of a planet called Pegasi B"></p>
-        </div>
+<div class="row small-up-1 medium-up-2 large-up-3" id="beer-container">
+  {{#each breweries}}
+  <div class="column">
+    <div class="callout">
+      <a href="/api/bar/{{id}}" class="lead" id={{id}}>{{name}}</a>
+      <p class="subheader">Type: {{brewery_type}}</p>
+      <p>Address: {{street}}</p>
+      <p>Number: {{phone}}</p>
+      <a href="{{website_url}}" target="_blank">Website</a>
     </div>
-    {{/each}}
+  </div>
+  {{/each}}
 </div>
 
 <div class="row column">
-    <a class="button expanded warning load-more">Load More</a>
+  <a class="button expanded warning load-more">Load More</a>
 </div>
