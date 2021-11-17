@@ -11,7 +11,8 @@ router.get('/:bar', (req, res) => {
     .then(response => {return response.json()})
     .then(bar => {
       let barResult = {
-        bar
+        bar,
+        loggedIn : req.session.loggedIn
       };
       console.log(barResult);
       res.render('single-post', barResult);
@@ -19,7 +20,5 @@ router.get('/:bar', (req, res) => {
     .catch(err => {console.log(err)});
 
 });
-
-
 
 module.exports = router;
