@@ -1,6 +1,6 @@
 const sequelize = require("../config/connection");
 
-const Comment = require("../models");
+const {Comment} = require("../models");
 
 const commentInfo = [
   {
@@ -25,6 +25,6 @@ const commentInfo = [
   },
 ];
 
-const seedComments = () => Comment.bulkCreate(userInfo);
+const seedComments = () => Comment.bulkCreate(commentInfo);
 
 module.exports = seedComments;

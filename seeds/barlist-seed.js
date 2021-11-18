@@ -1,6 +1,6 @@
 const sequelize = require("../config/connection");
 
-const BarList = require("../models");
+const {BarList} = require("../models");
 
 const barListInfo = [
   {
