@@ -10,19 +10,18 @@
 </head>
 
 <body>
-  <div>
-    <div class='top-bar-left nav-bar'>
-      <ul>
-        <li><a href="/">Beer Belly Ratings</a></li>
-        <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
-        {{#if loggedIn}}
-        <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
-        {{/if}}
-      </ul>
-    </div>
-  </div>
-  {{{ body }}}
-
+  <header class='top-bar-left nav-bar'>
+    <ul>
+      <li><a href="/">Beer Belly Ratings</a></li>
+      <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
+      {{#if loggedIn}}
+      <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
+      {{/if}}
+    </ul>
+  </header>
+  <main>
+    {{{ body }}}
+  </main>
 
   {{#if loggedIn}}
   <script src="/js/Logout.js"></script>
@@ -32,12 +31,7 @@
 
 
   <footer>
-    <div>
-      <div>
-        <ul>
-          <li class="footer-txt">Beer Belly Ratings &copy; </a></li>
-        </ul>
-      </div>
+    <li class="footer-txt">Beer Belly Ratings &copy;</li>
   </footer>
 
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
