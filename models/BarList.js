@@ -28,11 +28,14 @@ BarList.init({
     type: DataTypes.STRING,
     allowNull: true,
   },
+},
+{
   sequelize,
   timestamps: false,
   freezeTableName: true,
   underscored: true,
   modelName: "BarList",
+
 });
 
 module.exports = BarList;
