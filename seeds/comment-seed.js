@@ -14,7 +14,7 @@ const commentInfo = [
     bar_id: "frito",
   },
   {
-    comment_text: "Hello World",
+    comment_text: "Hello Worlds",
     user_id: 3,
     bar_id: "cheeto",
   },
