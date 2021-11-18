@@ -5,7 +5,7 @@ const sequelize = require("../config/connection");
 
 const seedDb = async () => {
   await sequelize.sync({
-    force: true,
+    force: true
   });
   await seedUser();
   await seedComment();
