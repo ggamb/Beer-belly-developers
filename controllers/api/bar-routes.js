@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const fetch = (...args) =>
-  import("node-fetch").then(({ default: fetch }) => fetch(...args));
+import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 router.get("/:bar", (req, res) => {
   //Searches by entered zip code
@@ -12,14 +12,14 @@ router.get("/:bar", (req, res) => {
       return response.json();
     })
     .then((bar) => {
-      BarList.create({
+      /*BarList.create({
         id: bar.id,
         name: bar.name,
         brewery_type: bar.brewery_type,
         street: bar.street,
         phone: bar.phone,
         website_url: bar.website_url,
-      });
+      });*/
     })
     .catch((err) => {
       console.log(err);
