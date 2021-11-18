@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 // post - Crerate new User route
 router.post('/', (req, res) => {
- console.log('** enter POST users');
+ console.log('** enter create users');
   User.create({
     username: req.body.username,
     password: req.body.password

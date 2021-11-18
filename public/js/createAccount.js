@@ -1,12 +1,11 @@
-async function loginForm(event) {
+async function signupForm(event) {
   event.preventDefault();
-
+  console.log('enter signup form')
   const username = document.querySelector("#username").value.trim();
-
   const password = document.querySelector("#password").value.trim();
 
   if (username && password) {
-    const response = await fetch("/login", {
+    const response = await fetch("/Users/", {
       method: "post",
       body: JSON.stringify({
         username,
@@ -20,9 +19,9 @@ async function loginForm(event) {
     } else {
       alert(response.statusText);
     }
+  
   }
+
 }
 
-
-
-document.querySelector('#login-btn').addEventListener('submit', loginForm);
+document.querySelector('#createAccount-btn').addEventListener('submit', signupForm);
