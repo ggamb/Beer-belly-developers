@@ -24,4 +24,4 @@ async function signupForm(event) {
 
 }
 
-document.querySelector('#createAccount-btn').addEventListener('submit', signupForm);
+document.querySelector('#createAccount-btn').addEventListener('click', signupForm);
