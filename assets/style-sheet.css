@@ -87,7 +87,7 @@ a {
     padding: 50px;
     margin:250px;
     background-color:rgba(252, 216, 11, 0.6);
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -105,3 +105,85 @@ body {
 }
 
 /** media queries**/
+
+@media only screen and (max-width: 400px) {
+    .login{
+        padding: 5px;
+        margin-left: 10px;
+        border-radius: 10px;
+        align-items: left;
+        width: 240px;
+        height: 500px;
+        
+    }
+
+    .login-form{
+        padding: 0;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .inputs{
+        margin-left: -40px;
+        width: 160px;
+    }
+
+    .warning{
+        margin-top: 20px;
+    }
+
+    .button{
+        text-align: center;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .login{
+        padding: 30px;
+        margin: 80px;
+        border-radius: 10px;
+        
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .login{
+        padding: 50px;
+        margin: 80px;
+        border-radius: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .login{
+        padding: 60px;
+        margin: 80px;
+        border-radius: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .login{
+        padding: 70px;
+        margin: 80px;
+        border-radius: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 1400px) {
+    .login{
+        padding: 80px;
+        margin: auto;
+        margin-top: 300px;
+        border-radius: 10px;
+        
+    
+    }
+  }
+
+  
+
