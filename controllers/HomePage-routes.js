@@ -13,7 +13,9 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 module.exports = router;

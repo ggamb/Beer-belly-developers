@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Beer Bellys</title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-  <link rel="stylesheet" href="./assets/style-sheet.css">
+  <link rel="stylesheet" href="/assets/style-sheet.css">
 </head>
 
 <body>
@@ -14,9 +14,11 @@
     <div class='top-bar-left nav-bar'>
       <ul>
         <li><a href="/">Beer Belly Ratings</a></li>
-        <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
+        
         {{#if loggedIn}}
         <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
+        {{ else}}
+        <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
         {{/if}}
       </ul>
     </div>
