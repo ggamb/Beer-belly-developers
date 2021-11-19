@@ -10,7 +10,7 @@ BarList.init({
   },
   name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   brewery_type: {
     type: DataTypes.STRING,
@@ -18,7 +18,7 @@ BarList.init({
   },
   street: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   phone: {
     type: DataTypes.STRING,
