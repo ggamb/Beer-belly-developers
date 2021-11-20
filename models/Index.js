@@ -13,6 +13,6 @@ Comment.belongsTo(User, {
   onDelete: 'SET NULL'
 });
 
-Bar.belogsTo(User,
-  though)
+// Bar.belogsTo(User,
+//   though)
 module.exports = { User, Comment };

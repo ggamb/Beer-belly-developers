@@ -50,10 +50,8 @@ async function getBreweriesByZip(event) {
         return;
     }
 
-    document.location.replace('/api/city/' + zipCode);
-
-
-}
+    document.location.replace('/api/zip/' + zipCode);
+};
 
 document.getElementById('submit-city').addEventListener('click', getBreweriesByCity);
 document.getElementById('submit-zip').addEventListener('click', getBreweriesByZip);
