@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <div class='top-bar-left nav-bar'>
+  <header id="header" class='top-bar-left nav-bar'>
     <ul>
       <li><a href="/">Beer Belly Ratings</a></li>
 
@@ -20,20 +20,20 @@
       <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
       {{/if}}
     </ul>
-  </div>
+  </header>
 
   <div id="page-container">
     <div id="content-wrap">
-    {{{ body }}}
+      {{{ body }}}
     </div>
   </div>
- 
+
 
 
   {{#if loggedIn}}
   <script src="/js/Logout.js"></script>
   {{else}}
-  <script src="/js/Login.js"></script>
+  <!--<script src="/js/Login.js"></script>-->
   {{/if}}
 
 
