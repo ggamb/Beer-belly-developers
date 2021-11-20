@@ -16,6 +16,4 @@ const isUnique = (bar) => {
     .catch(err => {return err});
 }
 
-
-
 module.exports = isUnique;

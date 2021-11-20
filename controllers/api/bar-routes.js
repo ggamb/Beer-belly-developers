@@ -14,18 +14,20 @@ router.get("/:bar", (req, res) => {
     })
     .then(bar => {
       console.log("bar data", bar);
-
-      if (isUnique(bar)) {
+      if (true) {
         console.log("unique bar");
         //If unique, creates new BarList instance using API return
-        BarList.create({
-          id: bar.id,
-          name: bar.name,
-          brewery_type: bar.brewery_type,
-          street: bar.street,
-          phone: bar.phone,
-          website_url: bar.website_url
-        })
+        BarList.findOrCreate({
+          where: {id: bar.id},
+          defaults: {
+            id: bar.id,
+            name: bar.name,
+            brewery_type: bar.brewery_type,
+            street: bar.street,
+            phone: bar.phone,
+            website_url: bar.website_url
+          }
+        });
 
         //Loads single-post page with no comments since it is a new post
         let barResult = {
