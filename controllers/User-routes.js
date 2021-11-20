@@ -69,9 +69,8 @@ router.post('/login', (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-    //  204 "no content"
       res.status(204).end();
-    });
+     });
   }
   else {
     //  404 website not found
