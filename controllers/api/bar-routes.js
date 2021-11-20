@@ -28,11 +28,26 @@ router.get("/:bar", (req, res) => {
         })
 
         //Loads single-post page with no comments since it is a new post
+        let barResult = {
+          bar,
+          loggedIn: req.session.loggedIn,
+          comments: null
+        };
 
-
+        res.render("single-post", barResult);
 
       } else {
-
+        console.log("not unique");
+        //Not unique bar
+        //Finds the existing BarList post and loads single page with comments associated to single-post
+        BarList.findOne({
+          where: {
+            id : bar.id
+          }
+        })
+        .then(barListData => {
+            console.log(barListData);
+        })
       }
     })
     .catch((err) => {

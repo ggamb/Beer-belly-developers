@@ -2,9 +2,10 @@ const {BarList} = require('../models');
 const sequelize = require('../config/connection')
 
 const isUnique = (bar) => {
-    let barId = bar.id;
 
-    return BarList.count({ where: { id: barId } })
+  console.log("bar.id", bar.id);  
+
+    return BarList.count({ where: { id: bar.id } })
     .then(count => {
       console.log("barlist count", count)
       if (count != 0) {
