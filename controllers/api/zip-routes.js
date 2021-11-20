@@ -18,13 +18,7 @@ router.get('/:zip', (req, res) => {
       res.render('index', barNames);
     })
     .catch(err => {console.log(err)});
-  
-    /*console.log("bar names ourside", barNames)
-    const data = {
-      barNames
-    }
-    
-    console.log("data to render", barNames)*/
+
   
     
 });

@@ -10,20 +10,24 @@
 </head>
 
 <body>
-  <div>
-    <div class='top-bar-left nav-bar'>
-      <ul>
-        <li><a href="/">Beer Belly Ratings</a></li>
-        
-        {{#if loggedIn}}
-        <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
-        {{ else}}
-        <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
-        {{/if}}
-      </ul>
+  <div class='top-bar-left nav-bar'>
+    <ul>
+      <li><a href="/">Beer Belly Ratings</a></li>
+
+      {{#if loggedIn}}
+      <li><a href="/logout" class="button warning btn" id="logout-btn">Logout</a></li>
+      {{ else}}
+      <li><a href="/login" class="button warning btn" id="login-btn">Login</a></li>
+      {{/if}}
+    </ul>
+  </div>
+
+  <div id="page-container">
+    <div id="content-wrap">
+    {{{ body }}}
     </div>
   </div>
-  {{{ body }}}
+ 
 
 
   {{#if loggedIn}}
@@ -33,13 +37,8 @@
   {{/if}}
 
 
-  <footer>
-    <div>
-      <div>
-        <ul>
-          <li class="footer-txt">Beer Belly Ratings &copy; </a></li>
-        </ul>
-      </div>
+  <footer id="footer" class="footer-txt">
+    Beer Belly Ratings &copy;
   </footer>
 
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
