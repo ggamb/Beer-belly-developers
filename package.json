@@ -1,6 +1,9 @@
 {
   "name": "beer-belly-developers-project-2",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "description": "* [Description](#description)\r * [Installation](#installation)\r * [Usage](#usage)\r * [Contributing](#contributing)\r * [Tests](#tests)\r * [Questions](#questions)",
   "main": "server.js",
   "scripts": {
