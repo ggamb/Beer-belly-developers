@@ -7,7 +7,6 @@ router.get('/:city', (req, res) => {
     let cityName = req.params.city;
     const apiKey = "https://api.openbrewerydb.org/breweries?by_city=" + cityName;
   
-  
     fetch(apiKey)
     .then(response => {return response.json()})
     .then(apiResponse => {

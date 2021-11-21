@@ -1,24 +1,19 @@
 const router = require('express').Router();
-// const sequelize = require('../connection');
-const { User} = require('../../models');
+const { User } = require('../../models');
 
-// get all users 
-
+//Get all users 
 router.get('/', (req, res) => {
-  console.log('** Enter get all users');
   User.findAll({
     attributes: { exclude: ['password'] }
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {
-      console.log(err);
       res.status(500).json(err);
     });
 });
 
 //Create new User route
 router.post('/', (req, res) => {
- console.log('** enter create users');
   User.create({
     username: req.body.username,
     password: req.body.password
@@ -34,15 +29,13 @@ router.post('/', (req, res) => {
       });
     })
     .catch(err => {
-      console.log(err);
       // server issue
       res.status(500).json(err);
     });
 });
 
-// post- login route
+//Login route
 router.post('/login', (req, res) => {
-  console.log('**Enter login');
   User.findOne({
     where: {
       username: req.body.username
@@ -53,11 +46,7 @@ router.post('/login', (req, res) => {
       res.status(400).json({ message: 'No user with that username!' });
       return;
     }
-
-    console.log(req.body);
-    console.log(dbUserData);
     const evaluatePassword = dbUserData.checkPassword(req.body.password);
-    console.log(evaluatePassword);
 
     if (!evaluatePassword) {
       res.status(400).json({ message: 'Incorrect password' });
@@ -74,9 +63,8 @@ router.post('/login', (req, res) => {
   });
 });
 
-// post- logout route
+// Logout route
 router.post('/logout', (req, res) => {
-  console.log(req.session.loggedIn);
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -88,8 +76,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-
-// put -update user password
+// Update user password
 router.put('/:id', (req, res) => {
  
   User.update(req.body, {
@@ -107,7 +94,6 @@ router.put('/:id', (req, res) => {
       res.json(dbUser);
     })
     .catch(err => {
-      console.log(err);
       // 500 server problem
       res.status(500).json(err);
     });
