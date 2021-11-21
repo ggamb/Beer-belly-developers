@@ -1,33 +1,36 @@
-//City name entered by user passed to function
-async function getBreweriesByCity (event) {
-    //Searches by entered city name
+const zipOrCity = (event) => {
     event.preventDefault();
+    console.log('we are here');
+    let userSearch = document.querySelector("#text-submit").value.trim();
 
-    let cityName = document.querySelector("#text-city").value.trim();
+    if(isNaN(userSearch)) {
+        getBreweriesByCity();
+    } else {
+        getBreweriesByZip();
+    }
+}
+
+//City name entered by user passed to function
+const getBreweriesByCity = () => {
+    //Searches by entered city name
+    let cityName = document.querySelector("#text-submit").value.trim();
 
     if(cityName == null) {
         return;
     }
 
     document.location.replace('/api/city/' + cityName);
-
-
 }
 
 //Zip code entered by user passed to function
-async function getBreweriesByZip(event) {
-    event.preventDefault();
-
-    let zipCode = document.querySelector("#text-zip").value.trim();
+const getBreweriesByZip = () => {
+    let zipCode = document.querySelector("#text-submit").value.trim();
 
     if(zipCode == null) {
         return;
     }
 
     document.location.replace('/api/zip/' + zipCode);
-
-
 }
 
-document.getElementById('submit-city').addEventListener('click', getBreweriesByCity);
-document.getElementById('submit-zip').addEventListener('click', getBreweriesByZip);
+document.getElementById('submit-search').addEventListener('click', zipOrCity);
