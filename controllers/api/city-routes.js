@@ -12,7 +12,8 @@ router.get('/:city', (req, res) => {
     .then(response => {return response.json()})
     .then(apiResponse => {
       let barNames = {
-        breweries: apiResponse
+        breweries: apiResponse,
+        loggedIn : req.session.loggedIn
       };
       res.render('index', barNames);
     })

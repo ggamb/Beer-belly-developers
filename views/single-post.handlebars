@@ -3,19 +3,20 @@
 {{#if loggedIn}}
 
 <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
   <div class="column row">
     <hr>
-    <div class="tabs-content" data-tabs-content="example-tabs">
+    <div class="review-display" data-tabs-content="example-tabs">
       <div class="tabs-panel is-active" id="panel1">
         <h4>Reviews</h4>
 
         <label>
+          {{/if}}
+
+          {{> comments}}
+
+          {{#if loggedIn}}
           My Review
-          <label>Star Rating
+          <label>Star Rating:
             <select>
               <option value="Star">One</option>
               <option value="Star">Two</option>
@@ -26,16 +27,12 @@
           </label>
           <textarea placeholder="Comment"></textarea>
         </label>
-        <button class="button" id="submit-btn">Submit Review</button>
+        <button class="button warning" id="submit-btn">Submit Review</button>
       </div>
     </div>
   </div>
 </form>
-{{/if}}
 
-{{> comments}}
-
-{{#if loggedIn}}
 <script src="/js/Comments.js"></script>
 <script src="/js/Delete-Comment.js"></script>
 {{/if}}
