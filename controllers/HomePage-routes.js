@@ -34,7 +34,11 @@ router.get("/bar/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['comment_text', 'user_id']
+        attributes: ['comment_text', 'user_id'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       }
     ]
   }).then(barWithComments => {
