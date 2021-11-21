@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// post - Create new User route
+//Create new User route
 router.post('/', (req, res) => {
  console.log('** enter create users');
   User.create({
@@ -48,6 +48,14 @@ router.post('/login', (req, res) => {
       username: req.body.username
     }
   }).then(dbUserData => {
+
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that username!' });
+      return;
+    }
+
+    console.log(req.body);
+    console.log(dbUserData);
     const evaluatePassword = dbUserData.checkPassword(req.body.password);
     console.log(evaluatePassword);
 
@@ -58,17 +66,17 @@ router.post('/login', (req, res) => {
     
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
-      req.session.username = dbUser.username;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
   
-      res.json({ user: dbUserData, message: 'You are  logged in' });
+      res.json({ user: dbUserData, message: 'You are logged in' });
     });
   });
 });
 
 // post- logout route
 router.post('/logout', (req, res) => {
-  console.log("LogoutRoute",req.session.loggedIn )
+  console.log(req.session.loggedIn);
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
