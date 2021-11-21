@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const sequelize = require('../connection');
-const { User} = require('../models');
+const { User} = require('../../models');
 
 // get all users 
 
@@ -68,6 +68,7 @@ router.post('/login', (req, res) => {
 
 // post- logout route
 router.post('/logout', (req, res) => {
+  console.log("LogoutRoute",req.session.loggedIn )
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
