@@ -10,7 +10,7 @@ User.hasMany(Comment, {
 
 Comment.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 BarList.hasMany(Comment, {
@@ -22,11 +22,16 @@ Comment.belongsTo(BarList,{
   foreignKey: "BarList_id",
 });
 
-/*User.belongsToMany(BarList, {
-  through: Comment,
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});*/
+// User.belongsToMany(BarList, {
+//   through: Comment,
+//   foreignKey: 'user_id',
+//   onDelete: 'SET NULL'
+// });
 
-//
+// BarList.hasMany(User, {
+//   foreignKey: 'user_id',
+//   onDelete: "SET CASCADE"
+// });
+
+
 module.exports = { User, Comment, BarList };

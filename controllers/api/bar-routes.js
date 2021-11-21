@@ -51,16 +51,12 @@ router.get("/:bar", (req, res) => {
                 model: User,
                 attributes: ['username']
               }
-            },
-            {
-              model: User,
-              attributes: ['username']
             }
           ]
         })
         .then(barPostData => {
           console.log(barPostData);
-          if (!dbPostData) {
+          if (!barPostData) {
             res.status(404).json({ message: 'No post found with this id' });
             return;
           }
