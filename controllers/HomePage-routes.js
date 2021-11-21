@@ -50,6 +50,8 @@ router.get("/bar/:id", (req, res) => {
         comments: barWithComments.dataValues.comments
       }
 
+      console.log(bar.comments);
+
      let barResult = {
         bar,
         loggedIn: req.session.loggedIn
