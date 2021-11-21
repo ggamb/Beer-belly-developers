@@ -27,7 +27,7 @@ router.get("/:bar", (req, res) => {
 
         //If unique, creates new BarList instance using API return
         BarList.findOrCreate({
-          where: {id: "cheeto"},
+          where: {id: bar.id },
           include:[
             {
               model: Comment,
