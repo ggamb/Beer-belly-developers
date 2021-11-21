@@ -18,4 +18,5 @@ Comment.belongsTo(User, {
 //  foreignKey: "bar_id",
 //});
 
+//
 module.exports = { User, Comment, BarList };
