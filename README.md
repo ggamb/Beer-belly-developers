@@ -3,10 +3,10 @@
 ## Table of Contents
 
 - [Description](#description)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Features](#features)
 - [Contributing](#contributing)
-- [Questions](#questions)
 
 ## Description
 
@@ -17,6 +17,10 @@ The application has pages devoted to individual tavern locations where dedicated
 This application is also powered by Open Brewery DB which is a free dataset and API with public information on breweries, cideries, brewpubs, and bottleshops.
 
 Our application was curated for beer connoisseurs and casual beer enthusiasts alike.
+
+## Screenshots
+
+*INSERT HERE*
 
 ## Installation
 
@@ -46,7 +50,7 @@ Copyright 2021
 
 This project is licensed under the MIT License. For the full license see this [link](https://opensource.org/licenses/MIT)
 
-## Contributing or Reach Out !
+## Contributing and Contact !
 
 [Glenn G](https://github.com/ggamb)
 
@@ -58,9 +62,3 @@ This project is licensed under the MIT License. For the full license see this [l
 
 [James K](https://github.com/JustKidding22)
 
-
-## Questions?
-
-Our Githubs:
-
-[ggamb](https://github.com/ggamb)
