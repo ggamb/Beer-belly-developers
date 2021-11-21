@@ -17,15 +17,11 @@
         <div class="columns small-6 large-centered">
           <div class="small-12 columns">
             <label>Find Your Dream Beer
-              <input class="input" type="text" placeholder="Search by city" id="text-city">
-              <button type="submit" class="button warning" id="submit-city">Search Now!</button>
+              <input class="input" type="text" placeholder="Search by city or zip code" id="text-submit">
+              <button type="submit" class="button warning" id="submit-search">Search Now!</button>
             </label>
           </div>
           <div class="small-12 columns">
-            <label>Zip code
-              <input class="input" type="number" placeholder="Search by zipcode" id="text-zip">
-            </label>
-            <button type="submit" class="button warning" id="submit-zip">Search Now!</button>
           </div>
         </div>
       </form>
@@ -41,5 +37,5 @@
 
 {{> beer-results}}
 
-
 <script src="/js/api-returns.js"></script>
+<script src="/js/add-bar.js"></script>

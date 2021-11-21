@@ -5,7 +5,7 @@ async function signupForm(event) {
   const password = document.querySelector("#password").value.trim();
 
   if (username && password) {
-    const response = await fetch("/Users/", {
+    const response = await fetch("/api/user/", {
       method: "post",
       body: JSON.stringify({
         username,
@@ -19,9 +19,7 @@ async function signupForm(event) {
     } else {
       alert(response.statusText);
     }
-  
   }
-
 }
 
 document.querySelector('#createAccount-btn').addEventListener('click', signupForm);

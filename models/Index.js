@@ -1,8 +1,9 @@
 const User = require("./User");
 const Comment = require("./Comment");
 const BarList = require("./BarList");
-// association / joins
 
+
+// association / joins
 User.hasMany(Comment, {
   foreignKey: "user_id",
   // onDelete: 'SET CASCADE'
@@ -10,7 +11,7 @@ User.hasMany(Comment, {
 
 Comment.belongsTo(User, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
+  // onDelete: "SET NULL",
 });
 
 BarList.hasMany(Comment, {
@@ -22,10 +23,5 @@ Comment.belongsTo(BarList,{
   foreignKey: "BarList_id",
 });
 
-/*User.belongsToMany(BarList, {
-  through: Comment,
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});*/
 
 module.exports = { User, Comment, BarList };
