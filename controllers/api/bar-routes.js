@@ -27,7 +27,7 @@ router.get("/:bar", (req, res) => {
 
         //If unique, creates new BarList instance using API return
         BarList.findOrCreate({
-          where: {id: bar.id},
+          where: {id: "cheeto"},
           include:[
             {
               model: Comment,
@@ -48,11 +48,13 @@ router.get("/:bar", (req, res) => {
           }
         })
         .then(barPostData => {
-          console.log(barPostData);
+          console.log("barPostData", barPostData);
+         // console.log("array of comments?", barPostData.BarList.dataValues.comments)
           if (!barPostData) {
             res.status(404).json({ message: 'No post found with this id' });
             return;
           }
+          //res.json(barPostData)
           let barResult = {
             bar,
             loggedIn: req.session.loggedIn,
