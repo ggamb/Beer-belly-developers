@@ -10,7 +10,7 @@ router.get('/', (req,res) => {
       console.log(err);
       res.status(500).json(err);
     });
-})
+});
 
 router.get("/:bar", (req, res) => {
   //Searches by entered zip code
@@ -23,7 +23,7 @@ router.get("/:bar", (req, res) => {
     })
     .then(bar => {
       console.log("bar data", bar);
-      console.log(bar.id);
+      console.log("bar.id data", bar.id);
 
         //If unique, creates new BarList instance using API return
         BarList.findOrCreate({
