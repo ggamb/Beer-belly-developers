@@ -20,7 +20,14 @@ Our application was curated for beer connoisseurs and casual beer enthusiasts al
 
 ## Screenshots
 
-*INSERT HERE*
+![screenshot](https://user-images.githubusercontent.com/87151585/142783151-bf95212c-c690-4c57-aa6f-6463bde0cc97.jpg)
+
+
+## Setup
+
+[Deployed to Heroku]()
+
+[GitHub Repository](https://github.com/ggamb/Beer-belly-developers-project-2)
 
 ## Installation
 
