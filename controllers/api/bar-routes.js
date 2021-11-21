@@ -2,6 +2,16 @@ const router = require("express").Router();
 const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const { BarList, Comment, User } = require('../../models');
 
+router.get('/', (req,res) => {
+  console.log('** Enter get all users');
+  BarList.findAll()
+    .then(dbBarData => res.json(dbBarData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+})
+
 router.get("/:bar", (req, res) => {
   //Searches by entered zip code
   let barName = req.params.bar;
