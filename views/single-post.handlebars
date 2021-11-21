@@ -1,4 +1,4 @@
-{{> post-info }}
+{{> post-info bar}}
 
 {{#if loggedIn}}
 
@@ -12,7 +12,7 @@
         <label>
           {{/if}}
 
-          {{> comments}}
+          {{> comments bar.comments}}
 
           {{#if loggedIn}}
           My Review
@@ -25,7 +25,7 @@
               <option value="Star">Five</option>
             </select>
           </label>
-          <textarea name="comment-body" placeholder="Comment"></textarea>
+          <textarea id="comment-text" name="comment-body" placeholder="Comment"></textarea>
         </label>
         <button class="button warning" id="submit-btn">Submit Review</button>
       </div>
