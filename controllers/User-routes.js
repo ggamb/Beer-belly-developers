@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// post - Crerate new User route
+// post - Create new User route
 router.post('/', (req, res) => {
  console.log('** enter create users');
   User.create({
@@ -49,6 +49,7 @@ router.post('/login', (req, res) => {
     }
   }).then(dbUserData => {
     const evaluatePassword = dbUserData.checkPassword(req.body.password);
+    console.log(evaluatePassword);
 
     if (!evaluatePassword) {
       res.status(400).json({ message: 'Incorrect password' });
