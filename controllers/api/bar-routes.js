@@ -27,7 +27,17 @@ router.get("/:bar", (req, res) => {
 
         //If unique, creates new BarList instance using API return
         BarList.findOrCreate({
-          where: {id: bar.id},
+          where: {id: "cheeto"},
+          include:[
+            {
+              model: Comment,
+              attributes: ['id', 'comment_text', 'user_id', 'BarList_id'],
+              include: {
+                model: User,
+                attributes: ['username']
+              }
+            }
+          ],
           defaults: {
             id: bar.id,
             name: bar.name,
@@ -36,9 +46,32 @@ router.get("/:bar", (req, res) => {
             phone: bar.phone,
             website_url: bar.website_url
           }
-        });
+        })
+        .then(barPostData => {
+          console.log("barPostData", barPostData);
+         // console.log("array of comments?", barPostData.BarList.dataValues.comments)
+          if (!barPostData) {
+            res.status(404).json({ message: 'No post found with this id' });
+            return;
+          }
+          //res.json(barPostData)
+          let barResult = {
+            bar,
+            loggedIn: req.session.loggedIn,
+            comments: null
+          };
 
-        BarList.findOne({
+          console.log(barResult)
+  
+          res.render("single-post", barResult);
+
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });;
+
+        /*BarList.findOne({
           where: {id: bar.id},
           attributes: [
             'id'
@@ -53,26 +86,8 @@ router.get("/:bar", (req, res) => {
               }
             }
           ]
-        })
-        .then(barPostData => {
-          console.log(barPostData);
-          if (!barPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
-            return;
-          }
-          let barResult = {
-            bar,
-            loggedIn: req.session.loggedIn,
-            comments: null
-          };
-  
-          res.render("single-post", barResult);
+        })*/
 
-        })
-        .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-        });
         //console.log("barList", barList);
         
         //console.log("created", created);
