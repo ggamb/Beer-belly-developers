@@ -1,4 +1,4 @@
-{{> post-info }}
+{{> post-info bar}}
 
 {{#if loggedIn}}
 
@@ -12,7 +12,7 @@
         <label>
           {{/if}}
 
-          {{> comments}}
+          {{> comments bar.comments}}
 
           {{#if loggedIn}}
           My Review

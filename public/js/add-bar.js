@@ -32,23 +32,12 @@ async function addBar(event) {
         })
         .then(response => {
             console.log(response);
-            if(response.ok) {
-                console.log('we are here')
-                
-            }
+            return document.location.replace('/bar/' + barID);
         })
         .catch( err => {
             console.log(err)
         })
     
-    document.location.replace('/bar/' + barID);
-
-    /*let barResult = {
-      bar,
-      loggedIn: req.session.loggedIn,
-      comments: null
-    };*/
-
 }
 
 

@@ -24,60 +24,38 @@ router.get("/bar/:id", (req, res) => {
 
   let barID = req.params.id;
 
-  /*const apiKey = "https://api.openbrewerydb.org/breweries/" + barID;
-  fetch(apiKey)
-    .then((response) => {
-      return response.json();
-    })
-    .then(bar => {
-      let barResult = {
-        bar,
-        loggedIn: req.session.loggedIn,
-        comments: null
-      };
-  
-      res.render("single-post", barResult);
-    })*/
-
-  Comment.findAll({
+  BarList.findOne({
     where: {
-      BarList_id: barID
+      id: barID
     },
     attributes: [
-      'comment_text',
-      'user_id',
+      'id', 'name', 'brewery_type', 'street', 'phone', 'website_url'
     ],
     include: [
       {
-        model: User,
-        attributes: ['username']
-      },
-      {
-        model: BarList,
-        attributes: ['id', 'name', 'brewery_type', 'street', 'phone', 'website_url']
+        model: Comment,
+        attributes: ['comment_text', 'user_id']
       }
     ]
-  })
-    .then(barWithComments => {
-      console.log("bawWithComments", barWithComments);
-      //res.json(barWithComments);
-       /*const bar = {
-        id: barWithComments.BarList.id,
-        name: barWithComments.BarList.name,
-        brewery_type: barWithComments.BarList.brewery_type,
-        street: barWithComments.BarList.street,
-        phone: barWithComments.BarList.phone,
-        website_url: barWithComments.BarList.website_url,
+  }).then(barWithComments => {
+      console.log("barWithComments", barWithComments);
+     
+      const bar = {
+        id: barWithComments.dataValues.id,
+        name: barWithComments.dataValues.name,
+        brewery_type: barWithComments.dataValues.brewery_type,
+        street: barWithComments.dataValues.street,
+        phone: barWithComments.dataValues.phone,
+        website_url: barWithComments.dataValues.website_url,
+        comments: barWithComments.dataValues.comments
       }
-    
 
      let barResult = {
         bar,
-        loggedIn: req.session.loggedIn,
-        comments
-      };*/
+        loggedIn: req.session.loggedIn
+      };
 
-      //res.render('single-post', barResult)
+      res.render('single-post', barResult)
     })
     .catch(err => {
       console.log(err)
