@@ -4,8 +4,10 @@
 
 * [Description](#description)
 * [Screenshot](#screenshot)
+* [Setup](#setup)
 * [Installation](#installation)
 * [Features](#features)
+* [License](#license)
 * [Contributing](#contributing)
 
 ## Description
