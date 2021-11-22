@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BarList, Comment, User } = require('../models/');
+const { BarList, Comment, User } = require('../models');
 
 // Redirects user to homepage after login
 router.get("/login", (req, res) => {
