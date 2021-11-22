@@ -1,8 +1,6 @@
+//Allows users to login
 const loginForm = (event) => {
   event.preventDefault();
-
-  console.log("we are here");
-
   const username = document.querySelector("#username").value.trim();
 
   const password = document.querySelector("#password").value.trim();

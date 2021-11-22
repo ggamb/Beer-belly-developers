@@ -1,3 +1,4 @@
+//Passes to correct function based on user input
 const zipOrCity = (event) => {
     event.preventDefault();
     console.log('we are here');

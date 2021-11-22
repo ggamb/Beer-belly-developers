@@ -1,20 +1,15 @@
-//const { json } = require("sequelize/types");
-
-//const { response } = require("express");
-
+//Adds a bar to database if new
+//Sends user to single-post bar page with comments
 async function addBar(event) {
     event.preventDefault();
     const barID = event.target.getAttribute('id');
     const apiKey = "https://api.openbrewerydb.org/breweries/" + barID;
 
-    //const barData = await findBar(barID);
     fetch(apiKey)
         .then((response) => {
             return response.json();
         })
         .then(barReturn => {
-            console.log(barReturn);
-            console.log(barReturn.name);
             return fetch('/api/bar/' + barReturn.id, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -31,15 +26,12 @@ async function addBar(event) {
             })
         })
         .then(response => {
-            console.log(response);
             return document.location.replace('/bar/' + barID);
         })
         .catch( err => {
             console.log(err)
         })
-    
 }
-
 
 document.querySelectorAll(".bar-link").forEach(bar => {
     bar.addEventListener('click', addBar);

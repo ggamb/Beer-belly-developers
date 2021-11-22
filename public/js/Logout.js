@@ -1,3 +1,4 @@
+//Allows user to logout
 const logout = () => {
  
   fetch('/api/user/logout', {

@@ -20,7 +20,7 @@ Our application was curated for beer connoisseurs and casual beer enthusiasts al
 
 ## Screenshots
 
-![screenshot](https://user-images.githubusercontent.com/87151585/142783151-bf95212c-c690-4c57-aa6f-6463bde0cc97.jpg)
+![theonescreenshot](https://user-images.githubusercontent.com/87151585/142794105-b0352b43-331d-43d3-ab5a-fa3aa6a5ecfa.jpg)
 
 
 ## Setup

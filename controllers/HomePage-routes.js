@@ -1,5 +1,9 @@
 const router = require("express").Router();
-const { BarList, Comment, User } = require('../models');
+//const { BarList, Comment, User } = require('../models');
+const BarList = require('../models/BarList');
+const Comment = require('../models/Comment');
+const User = require('../models/User');
+//import  {BarList, Comment, User} from "../models"
 
 // Redirects user to homepage after login
 router.get("/login", (req, res) => {
@@ -12,13 +16,14 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-//
+//Returns landing page
 router.get("/", (req, res) => {
   res.render("index", {
     loggedIn: req.session.loggedIn
   });
 });
 
+//Returns single-page for single bar
 router.get("/bar/:id", (req, res) => {
 
   let barID = req.params.id;
@@ -40,9 +45,7 @@ router.get("/bar/:id", (req, res) => {
         }
       }
     ]
-  }).then(barWithComments => {
-      console.log("barWithComments", barWithComments);
-     
+  }).then(barWithComments => {     
       const bar = {
         id: barWithComments.dataValues.id,
         name: barWithComments.dataValues.name,
@@ -52,8 +55,6 @@ router.get("/bar/:id", (req, res) => {
         website_url: barWithComments.dataValues.website_url,
         comments: barWithComments.dataValues.comments
       }
-
-      console.log(bar.comments);
 
      let barResult = {
         bar,
@@ -65,8 +66,6 @@ router.get("/bar/:id", (req, res) => {
     .catch(err => {
       console.log(err)
     })
-
-
 
 })
 
