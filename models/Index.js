@@ -15,10 +15,9 @@ BarList.hasMany(Comment, {
   foreignKey: "BarList_id",
 });
 
-Comment.belongsTo(BarList,{
+Comment.belongsTo(BarList, {
   through: User,
   foreignKey: "BarList_id",
 });
-
 
 module.exports = { User, Comment, BarList };

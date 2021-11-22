@@ -11,12 +11,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const sess = {
-  secret: 'Interior crocodile alligator',
+  secret: "Interior crocodile alligator",
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -26,8 +26,8 @@ const sess = {
 };
 
 app.use(session(sess));
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // turn on routes
 app.use(routes);
