@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
-const { BarList, Comment, User } = require('../models');
+//const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fetch(...args));
+const { BarList, Comment, User } = require('../models/');
 
 // Redirects user to homepage after login
 router.get("/login", (req, res) => {
