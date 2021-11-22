@@ -2,11 +2,11 @@
 
 ## Table of Contents
 
-- [Description](#description)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
+* [Description](#description)
+* [Screenshot](#screenshot)
+* [Installation](#installation)
+* [Features](#features)
+* [Contributing](#contributing)
 
 ## Description
 
@@ -18,7 +18,7 @@ This application is also powered by OpenBreweryDB API which is a free dataset an
 
 Our application was curated for beer connoisseurs and casual beer enthusiasts alike.
 
-## Screenshots
+## Screenshot
 
 ![theonescreenshot](https://user-images.githubusercontent.com/87151585/142794105-b0352b43-331d-43d3-ab5a-fa3aa6a5ecfa.jpg)
 
@@ -46,7 +46,7 @@ Copyright 2021
 
 This project is licensed under the MIT License. For the full license see this [link](https://opensource.org/licenses/MIT)
 
-## Contributing and Contact !
+## Contributing
 
 [Glenn G](https://github.com/ggamb)
 
