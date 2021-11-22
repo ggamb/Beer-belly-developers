@@ -3,6 +3,7 @@ const router = require("express").Router();
 const BarList = require('../models/BarList');
 const Comment = require('../models/Comment');
 const User = require('../models/User');
+//import  {BarList, Comment, User} from "../models"
 
 // Redirects user to homepage after login
 router.get("/login", (req, res) => {
