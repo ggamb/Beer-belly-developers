@@ -1,3 +1,4 @@
+//Runs server and allows for Handlebars templates
 const express = require("express");
 const routes = require("./controllers/");
 const sequelize = require("./config/connection");
@@ -25,7 +26,6 @@ const sess = {
 };
 
 app.use(session(sess));
-// app.engine('handlebars', require('exphbs'));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 

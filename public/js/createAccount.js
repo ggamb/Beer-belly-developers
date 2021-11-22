@@ -1,6 +1,6 @@
+//Allows users to create an account
 async function signupForm(event) {
   event.preventDefault();
-  console.log('enter signup form')
   const username = document.querySelector("#username").value.trim();
   const password = document.querySelector("#password").value.trim();
 
