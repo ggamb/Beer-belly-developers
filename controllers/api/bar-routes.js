@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BarList, Comment, User } = require('../../models');
+const { BarList, Comment, User } = require('../../models/Index');
 
 router.get('/', (req, res) => {
   console.log('** Enter get all users');
