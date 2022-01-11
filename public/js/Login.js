@@ -1,51 +1,28 @@
 async function loginForm(event) {
   event.preventDefault();
-  const username = document.querySelector('#username-signup').value.trim();
-  // const email = document.querySelector('#email-login').value.trim();
-  const password = document.querySelector('#login-btn').value.trim();
-  // or email && password
-  if ( username && password ) {
-    const response = await fetch('/api/users/login', {
-      method: 'post',
-      body: JSON.stringify({
-        username,
-        password
-      }),
-      headers: { 'Content-Type': 'application/json' }
-    });
 
-    if (response.ok) {
-      document.location.replace('/dashboard/');
-    } else {
-      alert(response.statusText);
-    }
-  }
-}
+  const username = document.querySelector("#username").value.trim();
 
-async function signupForm(event) {
-  event.preventDefault();
-
-  const username = document.querySelector('#username-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
+  const password = document.querySelector("#password").value.trim();
 
   if (username && password) {
-    const response = await fetch('/api/users', {
-      method: 'post',
+    const response = await fetch("/login", {
+      method: "post",
       body: JSON.stringify({
         username,
-        email,
-        password
+        password,
       }),
-      headers: { 'Content-Type': 'application/json' }
+      headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard/');
+      document.location.replace("/");
     } else {
       alert(response.statusText);
     }
   }
 }
 
-document.querySelector('#login-btn').addEventListener('submit', loginForm);
-document.querySelector('#logout-btn').addEventListener('submit', signupForm);
+
+
+document.querySelector('#login-btn').addEventListener('click', loginForm);

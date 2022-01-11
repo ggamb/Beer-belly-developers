@@ -1,34 +1,33 @@
 {
-  "name": "beer-belly-developers-challenge-2",
+  "name": "beer-belly-developers-project-2",
   "version": "1.0.0",
-  "description": "## Table of Contents * [Description](#description) * [Installation](#installation) * [Usage](#usage) * [Contributing](#contributing) * [Tests](#tests) * [Questions](#questions)",
-  "main": "index.js",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.2",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.4",
-    "express-session": "^1.17.2",
-    "handlebars": "^4.7.7",
-    "jquery": "^3.6.0",
-    "mysql2": "^2.3.3-rc.0",
-    "node-fetch": "^3.1.0",
-    "sequelize": "^6.9.0"
-  },
-  "devDependencies": {},
+  "description": "* [Description](#description)\r * [Installation](#installation)\r * [Usage](#usage)\r * [Contributing](#contributing)\r * [Tests](#tests)\r * [Questions](#questions)",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ggamb/Beer-belly-developers-challenge-2.git"
+    "url": "git+https://github.com/ggamb/Beer-belly-developers-project-2.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ggamb/Beer-belly-developers-challenge-2/issues"
+    "url": "https://github.com/ggamb/Beer-belly-developers-project-2/issues"
   },
-  "homepage": "https://github.com/ggamb/Beer-belly-developers-challenge-2#readme"
+  "homepage": "https://github.com/ggamb/Beer-belly-developers-project-2#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.6.0",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.1.0",
+    "sequelize": "^6.11.0"
+  }
 }

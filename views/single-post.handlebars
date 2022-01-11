@@ -1,21 +1,38 @@
 {{> post-info }}
 
 {{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
 
-  <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">upvote</button>
+<form class="comment-form">
+  <div class="column row">
+    <hr>
+    <div class="review-display" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="panel1">
+        <h4>Reviews</h4>
+
+        <label>
+          {{/if}}
+
+          {{> comments}}
+
+          {{#if loggedIn}}
+          My Review
+          <label>Star Rating:
+            <select>
+              <option value="Star">One</option>
+              <option value="Star">Two</option>
+              <option value="Star">Three</option>
+              <option value="Star">Four</option>
+              <option value="Star">Five</option>
+            </select>
+          </label>
+          <textarea name="comment-body" placeholder="Comment"></textarea>
+        </label>
+        <button class="button warning" id="submit-btn">Submit Review</button>
+      </div>
+    </div>
   </div>
 </form>
-{{/if}}
 
-{{> comments post.comments}}
-
-{{#if loggedIn}}
 <script src="/js/Comments.js"></script>
-<script src="/js/Delete-Comment.js"></script>
+<!--<script src="/js/Delete-Comment.js"></script>-->
 {{/if}}

@@ -5,39 +5,12 @@ async function getBreweriesByCity (event) {
 
     let cityName = document.querySelector("#text-city").value.trim();
 
-    if(cityName === null) {
+    if(cityName == null) {
         return;
     }
 
-    let hostName = window.location.hostname;
-    
-    console.log(hostName);
+    document.location.replace('/api/city/' + cityName);
 
-    if(hostName == 'localhost') {
-        hostName += ':3001/';
-    } 
-
-    console.log(hostName);
-
-    let newURL = 'http://' + hostName  + "api/city/" + cityName;
-
-    window.location.href = newURL;
-
-
-    /*if (cityName) {
-        const response = await fetch('/api/city', {
-            method: 'get',
-            body: JSON.stringify({
-            cityName
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        })
-        if (response.ok) {
-            document.location.replace('/');
-        } else {
-            alert(response.statusText);
-        }
-    }*/
 
 }
 
@@ -47,21 +20,12 @@ async function getBreweriesByZip(event) {
 
     let zipCode = document.querySelector("#text-zip").value.trim();
 
-    if(zipCode === null) {
+    if(zipCode == null) {
         return;
     }
 
-    let hostName = window.location.hostname;
+    document.location.replace('/api/zip/' + zipCode);
 
-    if(hostName == 'localhost') {
-        hostName += ':3001/';
-    } 
-
-    console.log(hostName);
-
-    let newURL = 'http://' + hostName  + "api/zip/" + zipCode;
-
-    window.location.href = newURL;
 
 }
 
