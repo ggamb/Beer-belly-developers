@@ -1,4 +1,4 @@
-# Beer-belly-developers-project-2
+# Beer-belly-developers
 
 ## Table of Contents
 
