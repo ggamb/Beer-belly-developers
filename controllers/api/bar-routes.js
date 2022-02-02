@@ -21,7 +21,7 @@ router.get("/:bar", (req, res) => {
     attributes: [
       'id'
     ],
-    include:[
+    /*include:[
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'user_id', 'BarList_id'],
@@ -30,7 +30,7 @@ router.get("/:bar", (req, res) => {
           attributes: ['username']
         }
       }
-    ]
+    ]*/
   })
   .then(barPostData => {
     if (!barPostData) {
