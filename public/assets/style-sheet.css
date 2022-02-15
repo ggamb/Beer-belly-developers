@@ -1,9 +1,11 @@
+:root {
+    --main-color: rgba(252, 216, 11, 0.8);
+}
+
 #header {
-    z-index: 1;
     right: 0;
     left: 0;
     margin: 0;
-    padding-bottom: 10px;
     z-index:9998;
     position:fixed;
     top: 0;
@@ -14,15 +16,18 @@ a {
     text-decoration: none;
 }
 
+.header-flex {
+    display: flex;
+    justify-content: center;
+}
+
 .nav-bar {
-    background-color: rgba(0,0,0,.2);
-    width:100%;
+    background-color: rgba(0,0,0,.6);
+    width: 100%;
     font-size: 36px;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:#001d3d;
-    text-shadow: 0 0 20px rgb(243, 213, 42);
-    margin-bottom: 50px;
+    color: var(--main-color);
 }
 
 .nav-bar ul {
@@ -35,6 +40,10 @@ a {
     padding-top: 10px;
 }
 
+a { 
+    text-decoration: none;
+}
+
 .hero-text p {
     color: #001d3d;
     padding: 10px;
@@ -45,7 +54,7 @@ a {
 .hero-text{
     margin: 60px;
     padding: 50px;
-    background-color:rgba(252, 216, 11, 0.6);
+    background-color: var(--main-color);
     border-radius: 5px;
     text-align: center;   
 }
@@ -53,13 +62,13 @@ a {
 .hero-text h1 {
     padding: 30px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-shadow: 0 0 20px rgb(245, 126, 0);
 }
 
 .hero-text a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 24px;
-    text-decoration: underline;
+    text-decoration: none;
+    outline: black;
 }
 
 .box {
@@ -71,20 +80,37 @@ a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     color:#001d3d;
-    text-shadow: 0 0 20px rgb(243, 213, 42);
     padding-bottom: 20px;
 }
 
+.bar-styles {
+    width: 100%;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 5px 0;
+    background: var(--main-color);
+}
+
 .input {
-    background-color: rgba(252, 216, 11, 0.6);
+    background-color: var(--main-color);
 }
 
 .lead {
+    font-size: 36px;
+    font-weight: bold;
+    color:var(--main-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.bar-link {
     font-size: 28px;
     font-weight: bold;
     color:#001d3d;
-    text-shadow: 0 0 20px rgb(243, 213, 42);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
 }
 
 .footer-txt {
@@ -97,11 +123,17 @@ a {
 }
 
 .login {
-    padding: 50px;
+    padding: 50px 50px;
     margin:250px;
-    background-color:rgba(252, 216, 11, 0.6);
+    background-color:var(--main-color);
     border-radius: 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#login-container {
+ width: 100%;
 }
 
 .login-form {
@@ -247,7 +279,7 @@ padding-bottom: 2.5rem;
 .review-display {
     margin: 60px;
     padding: 50px;
-    background-color:rgba(252, 216, 11, 0.6);
+    background-color:var(--main-color);
     border-radius: 5px;
     text-align: left;
     color:#001d3d;
@@ -256,10 +288,11 @@ padding-bottom: 2.5rem;
 
 .reviews {
     font-size: 24px;
-    background-color:rgba(252, 216, 11, 0.6);
+    background-color:var(--main-color);
 }
 
 .reviews a {
+    font-weight: 500;
     text-decoration: underline;
 }
 
